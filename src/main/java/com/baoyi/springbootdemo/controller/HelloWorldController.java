@@ -1,6 +1,7 @@
 package com.baoyi.springbootdemo.controller;
 
-import com.baoyi.springbootdemo.annotation.UserModel;
+import com.baoyi.springbootdemo.annotation.CurrentOperator;
+import com.baoyi.springbootdemo.model.UserModel;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +12,7 @@ import springfox.documentation.annotations.ApiIgnore;
 public class HelloWorldController {
 
     @GetMapping("/sayHello")
-    private String sayHello(@ApiIgnore @UserModel com.baoyi.springbootdemo.model.UserModel useModel) {
+    private String sayHello(@ApiIgnore @CurrentOperator UserModel useModel) {
 
         return useModel.toString();
     }
